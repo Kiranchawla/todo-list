@@ -12,6 +12,7 @@ row.id='myRow';
 
         row.innerHTML = `<td id='inputrow'>${v}</td> `+`<td id='completed'><label><h4>Completed:</h4></label><br><hr><input type='checkbox' name='completed' value='Yes' class='yes' id='yes' onclick='selectOnlyThis(this)'><label><pre><bold>Yes  </bold>  </pre></label><input type='checkbox' name='completed' value='No' id='no-ask-reason'   class='no' data-index='${i}' onclick='selectOnlyThis(this)' ><label><bold>NO</bold></label></td><br>`+`<button  id='del' onclick='deleteItem(event)' >DELETE</button>`//+`<td class='reasoncell'></td>`//`<td class='reason-${i}'><p id=''></p></td>` // same as above
         table.append(row);
+        update()
     })
 
 
@@ -23,7 +24,7 @@ row.id='myRow';
 
 input.addEventListener('keypress',function(event){
     if(event.key === 'Enter'){
-        event.preventDefault();
+       // event.preventDefault();
         update();
     }
 });
@@ -34,6 +35,7 @@ input.addEventListener('input',() =>{
     alert("Task must be filled out");
     return false;
    } 
+   
 })
 
 
@@ -234,7 +236,7 @@ if(box !==checkbox)box.checked = false;
 // function noAskReason(){
 
 // }
-console.log(myArray);
+//console.log(myArray);
   
 /*
 const setError = (input,message)=>{
